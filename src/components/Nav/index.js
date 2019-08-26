@@ -3,65 +3,81 @@
  */
 import React from 'react';
 // import PropTypes from 'prop-types';
-// import { NavLink } from 'react-router-dom';
-// import { getURL } from 'src/utils/url';
+import { NavLink } from 'react-router-dom';
+
 
 /**
  * Local import
  */
 import './nav.scss';
+import { getURL } from '../../utils/url';
+import {
+  usersNav,
+  discoverNav,
+  infoNav,
+  mainNav,
+} from '../../utils/navItems';
 
 /**
  * Code
  */
 const Nav = () => (
   <nav className="nav">
-    <ul className="nav-list">
-      <li className="nav-list-users">
-        <h2>Utilisateurs</h2>
-        <ul>
-          <li>Licences et tarifs</li>
-          <li>Mises à jour</li>
-          <li>Vos suggestions</li>
-        </ul>
-      </li>
-      <li className="nav-list-discovery">
-        <h2>Découverte</h2>
-        <ul>
-          <li>Fiche descriptive</li>
-          <li>Saisie de la structure</li>
-          <li>Descente de charges</li>
-          <li>Calcul sismique</li>
-          <li>Vérification des murs</li>
-          <li>Eurocodes</li>
-          <li>Étude comparative</li>
-          <li>Bibliogarphie</li>
-          <li>Questions fréquentes</li>
-          <li>D'autres questions ?</li>
-          <li>Prêt d'évaluation</li>
-          <li>Offre éducation</li>
-          <li>Version gratuite</li>
-        </ul>
-      </li>
-      <li className="nav-list-docs">
-        <h2>Infos & doc</h2>
-        <ul>
-          <li>Accueil</li>
-          <li>Contact</li>
-          <li>Plan du site</li>
-          <li>Recommander ce site</li>
-        </ul>
-      </li>
-      <li className="nav-list-admin">
-        <ul>
-          <li>Accueil</li>
-          <li>Contact</li>
-          <li>Plan du site</li>
-          <li>Recommander ce site</li>
-        </ul>
-      </li>
-      <li className="nav-list-print">Imprimer</li>
-    </ul>
+    <section className="nav-section">
+      <h2 className="nav-section-title">Utilisateurs</h2>
+      {usersNav.map(navItem => (
+        <NavLink
+          to={getURL('/utilisateurs', navItem)}
+          key={navItem}
+          exact
+          className="nav-link"
+          activeClassName="nav-link--active"
+        >
+          {navItem}
+        </NavLink>
+      ))}
+    </section>
+    <section className="nav-section">
+      <h2 className="nav-section-title">Découverte</h2>
+      {discoverNav.map(navItem => (
+        <NavLink
+          to={getURL('/utilisateurs', navItem)}
+          key={navItem}
+          exact
+          className="nav-link"
+          activeClassName="nav-link--active"
+        >
+          {navItem}
+        </NavLink>
+      ))}
+    </section>
+    <section className="nav-section">
+      <h2 className="nav-section-title">Infos et doc</h2>
+      {infoNav.map(navItem => (
+        <NavLink
+          to={getURL('/utilisateurs', navItem)}
+          key={navItem}
+          exact
+          className="nav-link"
+          activeClassName="nav-link--active"
+        >
+          {navItem}
+        </NavLink>
+      ))}
+    </section>
+    <section className="nav-section">
+      {mainNav.map(navItem => (
+        <NavLink
+          to={getURL('/utilisateurs', navItem)}
+          key={navItem}
+          exact
+          className="nav-link"
+          activeClassName="nav-link--active"
+        >
+          {navItem}
+        </NavLink>
+      ))}
+    </section>
   </nav>
 );
 

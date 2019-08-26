@@ -2,6 +2,7 @@
  * NPM import
  */
 import React from 'react';
+import { Route } from 'react-router-dom';
 
 /**
  * Local import
@@ -10,6 +11,7 @@ import './app.scss';
 import Header from 'src/components/Header';
 import Nav from 'src/components/Nav';
 import Main from 'src/components/Main';
+import { from } from 'rxjs';
 
 /**
  * Code

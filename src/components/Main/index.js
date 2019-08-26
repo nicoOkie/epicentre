@@ -2,6 +2,7 @@
  * NPM import
  */
 import React from 'react';
+import { Route } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 
 
@@ -9,13 +10,14 @@ import React from 'react';
  * Local import
  */
 import './main.scss';
+import Home from '../Home';
 
 /**
  * Code
  */
 const Main = () => (
   <main className="main">
-   Ici mAIN
+    <Route exact path="/" component={Home} />
   </main>
 );
 
