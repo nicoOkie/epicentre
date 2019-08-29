@@ -22,11 +22,10 @@ export const discoverNav = [
 
 export const infoNav = [
   'Théorie et pratique',
-  'Biographie générale',
+  'Bibliographie générale',
 ];
 
 export const mainNav = [
-  'Accueil',
   'Contact',
   'Plan du site',
   'Recommandez ce site',

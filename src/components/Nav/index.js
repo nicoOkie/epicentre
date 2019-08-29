@@ -41,7 +41,7 @@ const Nav = () => (
       <h2 className="nav-section-title">Découverte</h2>
       {discoverNav.map(navItem => (
         <NavLink
-          to={getURL('/utilisateurs', navItem)}
+          to={getURL('/decouverte', navItem)}
           key={navItem}
           exact
           className="nav-link"
@@ -55,7 +55,7 @@ const Nav = () => (
       <h2 className="nav-section-title">Infos et doc</h2>
       {infoNav.map(navItem => (
         <NavLink
-          to={getURL('/utilisateurs', navItem)}
+          to={getURL('/infos-et-doc', navItem)}
           key={navItem}
           exact
           className="nav-link"
@@ -66,9 +66,18 @@ const Nav = () => (
       ))}
     </section>
     <section className="nav-section">
+      <NavLink
+        to="/"
+        key="home"
+        exact
+        className="nav-link"
+        activeClassName="nav-link--active"
+      >
+          Accueil
+      </NavLink>
       {mainNav.map(navItem => (
         <NavLink
-          to={getURL('/utilisateurs', navItem)}
+          to={getURL('/liens', navItem)}
           key={navItem}
           exact
           className="nav-link"
