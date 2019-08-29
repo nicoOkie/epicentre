@@ -7,6 +7,9 @@ import React, { useState } from 'react';
  * Local Import
  */
 import './user.scss';
+import Licences from './Licences';
+import Description from './Description';
+import Suggest from './Suggest';
 
 /**
  * Code
@@ -20,7 +23,11 @@ const User = () => {
   }
 
   return (
-    <div>{getUrl}</div>
+    <>
+      {getUrl.includes('licences') && <Licences />}
+      {getUrl.includes('description') && <Description />}
+      {getUrl.includes('sugestions') && <Suggest />}
+    </>
   );
 };
 
